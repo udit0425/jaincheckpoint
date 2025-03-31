@@ -7,12 +7,27 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="./styles.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .navbar {
+            padding: 5px 10px; /* Reduce padding for a slimmer navbar */
+        }
+    
+        .navbar-brand img {
+            height: 40px; /* Reduce logo size */
+            width: 50px;
+        }
+    
+        .navbar-nav .nav-link {
+            padding: 5px 10px; /* Reduce link padding */
+            font-size: 15px; /* Optional: Make text slightly smaller */
+        }
+    </style>
+    
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#" style="width: 13%;">My Trip <img class="logo-img" src="logonew.jpeg">
-            </a>
+            <a class="navbar-brand" href="#">My Trip <img class="logo-img" src="logonew.jpeg"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -22,21 +37,18 @@
                     <li class="nav-item"><a class="nav-link" href="#formbooking">Book</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="packagesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Packages</a>
-                        <ul class="dropdown-menu" aria-labelledby="packagesDropdown">
+                        <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">USA</a></li>
                             <li><a class="dropdown-item" href="#">India</a></li>
                             <li><a class="dropdown-item" href="#">France</a></li>
-                            <li><a class="dropdown-item" href="#">CHina</a></li>
+                            <li><a class="dropdown-item" href="#">China</a></li>
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Gallery</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">About</a></li>
                 </ul>
-                <div class="d-flex">
-                    <button class="btn btn-outline-primary me-2">Login</button>
-                <a href="register.html"><button  class="btn btn-primary">Register</button></a>    
-                </div>
+                <div class="d-flex" id="navUser"></div>
             </div>
         </div>
     </nav>
@@ -148,6 +160,30 @@
         <p>&copy; 2025 All Rights Reserved.</p>
     </footer>
 
- 
+ <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var storedUser = localStorage.getItem("loggedInUser");
+            var navUser = document.getElementById("navUser");
+
+            if (storedUser) {
+                navUser.innerHTML = `
+                    <span class="me-3">Welcome, <strong>${storedUser}</strong></span>
+                    <button class="btn btn-danger" onclick="logout()">Logout</button>
+                `;
+            } else {
+                navUser.innerHTML = `
+                    <a href="login.html"><button class="btn btn-outline-primary me-2">Login</button></a>
+                    <a href="register.html"><button class="btn btn-primary">Register</button></a>
+                `;
+            }
+        });
+
+        function logout() {
+            localStorage.removeItem("loggedInUser");
+            window.location.href = "index.html";
+        }
+    </script>
+
 </body>
 </html>
