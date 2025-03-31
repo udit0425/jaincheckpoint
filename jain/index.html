@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to BookingCompanhy   </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="./styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" style="width: 13%;">My Trip <img class="logo-img" src="logonew.jpeg">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#formbooking">Book</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="packagesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Packages</a>
+                        <ul class="dropdown-menu" aria-labelledby="packagesDropdown">
+                            <li><a class="dropdown-item" href="#">USA</a></li>
+                            <li><a class="dropdown-item" href="#">India</a></li>
+                            <li><a class="dropdown-item" href="#">France</a></li>
+                            <li><a class="dropdown-item" href="#">CHina</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                </ul>
+                <div class="d-flex">
+                    <button class="btn btn-outline-primary me-2">Login</button>
+                <a href="register.html"><button  class="btn btn-primary">Register</button></a>    
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="d-flex align-items-center justify-content-center text-center text-white">
+        <div>
+            <img src="./shopbg.jpg" alt="" class="img-bg">
+            <h1>Welcome to your booking </h1>
+            <h2 id="changing-text" class="display-4">click below to start booking</h2>
+            <button class="btn btn-lg btn-danger mt-3">book Now</button>
+        </div>
+    </header>
+    <div class="container" id="formbooking">
+        <div class="row">
+            <div class="half">
+                <img src="travel.jpeg" alt="Brand" style="width:100%">
+            </div>
+            <div class="half">
+                <form id="bookingForm">
+                    <div class="form-group">
+                        <label>Where to</label>
+                        <select id="destination">
+                            <option>Paris</option>
+                            <option>New York</option>
+                            <option>Tokyo</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>How Many Persons</label>
+                        <input type="number" id="persons">
+                    </div>
+                    <div class="form-group">
+                        <label>Start Date</label>
+                        <input type="date" id="startDate">
+                    </div>
+                    <div class="form-group">
+                        <label>End Date</label>
+                        <input type="date" id="endDate">
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea id="description" minlength="50" maxlength="500"></textarea>
+                    </div>
+                    <button type="button" class="btn">Book Now</button>
+                </form>
+            </div>
+        </div>
+
+        <h2>Package Gallery</h2>
+        <div class="gallery">
+            <div class="card"><img src="Paris1.jpg" style="width:100%; height:210px">
+                <h3>Paris</h3>
+                <p>Flight + hotel + cab packages available</p>
+                <p>$500</p><button class="btn">Book Now</button>
+            </div>
+            <div class="card"><img src="newyork.webp" style="width:100%; height:210px ">
+                <h3>New York</h3>
+                <p>FFlight + hotel + cab packages available</p>
+                <p>$700</p><button class="btn">Book Now</button>
+            </div>
+            <div class="card"><img src="tokyo.jpeg" style="width:100% ;height:210px">
+                <h3>Tokyo</h3>
+                <p>Flight + hotel + cab packages available</p>
+                <p>$600</p><button class="btn">Book Now</button>
+            </div>
+        </div>
+
+        <h2>Our Services</h2>
+        <div class="services">
+            <div class="service">Affordable Hotel</div>
+            <div class="service">Food & Drinks</div>
+            <div class="service">Safety Guide</div>
+            <div class="service">Local Transport</div>
+            <div class="service">24/7 Support</div>
+            <div class="service">Custom Itinerary</div>
+        </div>
+    </div>
+    <div class="container">
+        <h2>Gallery</h2>
+        <div class="gallery">
+            <img src="gallery1.jpeg" alt="Gallery Image 1">
+            <img src="gallery2.jpeg" alt="Gallery Image 2">
+            <img src="gallery3.jpeg" alt="Gallery Image 3">
+            <img src="gallery4.jpeg" alt="Gallery Image 4">
+            <img src="gallery5.jpeg" alt="Gallery Image 3">
+            <img src="gallery6.jpeg" alt="Gallery Image 4">
+        </div>
+    </div>
+    
+    <section class="about">
+        <div class="left">
+         
+        </div>
+        <div class="right">
+            <h2>About Our Company</h2>
+            <p>We are a leading travel company offering premium services worldwide. Our expertise ensures seamless travel experiences.</p>
+            <p>Established: 2010</p>
+            <p>Location: Bangalore, India</p>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <p>BookingCompany</p>
+        <div class="social-icons">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+        </div>
+        <p>&copy; 2025 All Rights Reserved.</p>
+    </footer>
+
+ 
+</body>
+</html>
